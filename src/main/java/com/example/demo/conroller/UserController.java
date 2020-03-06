@@ -29,7 +29,7 @@ public class UserController {
         return ResponseEntity.ok(user);
     }
     @GetMapping(value = "/user")
-    public ResponseEntity<List<User>> find() {
+    public ResponseEntity<List<User>> findAll() {
         List<User> userList = userService.findAll();
         return ResponseEntity.ok(userList);
     }
@@ -39,7 +39,7 @@ public class UserController {
         userService.update(userId, user);
     }
 
-    @DeleteMapping(value = "user/{id}")
+    @DeleteMapping(value = "/user/{id}")
     public void delete(@PathVariable(value = "id") int userId) {
         userService.delete(userId);
     }
